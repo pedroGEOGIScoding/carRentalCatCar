@@ -8,3 +8,10 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+/.copilot-plugin
+/aws.xml
+/compiler.xml
+/encodings.xml
+/jarRepositories.xml
+/misc.xml
+/vcs.xml
