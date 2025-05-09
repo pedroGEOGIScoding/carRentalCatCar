@@ -13,6 +13,7 @@
     <properties>
         <java.version>21</java.version>
         <vaadin.version>24.7.3</vaadin.version>
+        <aws.sdk.version>2.25.13</aws.sdk.version>
     </properties>
 
     <parent>
@@ -35,6 +36,21 @@
 
     <dependencies>
         <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>dynamodb-enhanced</artifactId>
+            <version>${aws.sdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>dynamodb</artifactId>
+            <version>${aws.sdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>s3</artifactId>
+            <version>${aws.sdk.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin</artifactId>
         </dependency>
@@ -49,16 +65,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -126,7 +135,7 @@
 
     <profiles>
         <profile>
-            <!-- Production mode is activated using -Pproduction -->
+            <!-- Production mode is activated using - Production -->
             <id>production</id>
             <dependencies>
                 <!-- Exclude development dependencies from production -->
