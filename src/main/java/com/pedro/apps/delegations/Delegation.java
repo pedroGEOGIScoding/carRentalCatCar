@@ -7,8 +7,8 @@ import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbSortK
 
 @DynamoDbBean
 public class Delegation {
-	private String delegationId;
-	private String operation;
+	private String delegationId; //This is the partition key
+	private String operation; //This is the sort key
 	private String name;
 	private String address;
 	private String city;
