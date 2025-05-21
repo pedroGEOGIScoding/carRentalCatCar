@@ -5,8 +5,7 @@ import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbSortKey;
 
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 
 @DynamoDbBean
 public class Car {
@@ -21,7 +20,8 @@ public class Car {
 	private float lat;
 	private float lon;
 	private int price;
-	private List<Calendar> datesFree;
+	public enum status {AVAILABLE, RENTED, MAINTENANCE, OUT_OF_ORDER}
+	private Map<String, Boolean> bookingDates;
 
 	@DynamoDbPartitionKey
 	public String getDelegationId() {
@@ -122,12 +122,19 @@ public class Car {
 		this.price = price;
 	}
 
-	@DynamoDbAttribute("datesFree")
-	public List<Calendar> getDatesFree() {
-		return datesFree;
+	@DynamoDbAttribute("status")
+	public status getStatus(status status) {
+		return status;
 	}
 
-	public void setDatesFree(List<Calendar> datesFree) {
-		this.datesFree = datesFree;
+	@DynamoDbAttribute("bookingDates")
+	public Map<String, Boolean> getBookingDates() {
+		return bookingDates;
 	}
+
+	public void setBookingDates(Map<String, Boolean> bookingDates) {
+		this.bookingDates = bookingDates;
+	}
+
+
 }
