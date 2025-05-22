@@ -136,5 +136,4 @@ public class Car {
 		this.bookingDates = bookingDates;
 	}
 
-
 }
