@@ -20,5 +20,5 @@ public interface DelegationRepository {
 	List<Delegation> listAllDelegations();
 
 
-
+	<T> List<T> listAllItems(Class<T> clazz);
 }
