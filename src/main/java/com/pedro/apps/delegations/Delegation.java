@@ -18,6 +18,19 @@ public class Delegation {
 	private String phone;
 	private String email;
 
+	public Delegation(String delegationId, String operation, String name, String address, String city, float latDelegation, float lonDelegation, int availableCarQty, String phone, String email) {
+		this.delegationId = delegationId;
+		this.operation = operation;
+		this.name = name;
+		this.address = address;
+		this.city = city;
+		this.latDelegation = latDelegation;
+		this.lonDelegation = lonDelegation;
+		this.availableCarQty = availableCarQty;
+		this.phone = phone;
+		this.email = email;
+	}
+
 	@DynamoDbPartitionKey
 	public String getDelegationId() {
 		return delegationId;

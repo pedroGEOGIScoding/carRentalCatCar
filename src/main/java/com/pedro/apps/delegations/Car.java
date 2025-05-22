@@ -23,6 +23,21 @@ public class Car {
 	public enum status {AVAILABLE, RENTED, MAINTENANCE, OUT_OF_ORDER}
 	private Map<String, Boolean> bookingDates;
 
+	public Car(String delegationId, String operation, String carId, String make, String model, String year, String color, Boolean rented, float lat, float lon, int price, Map<String, Boolean> bookingDates) {
+		this.delegationId = delegationId;
+		this.operation = operation;
+		this.carId = carId;
+		this.make = make;
+		this.model = model;
+		this.year = year;
+		this.color = color;
+		this.rented = rented;
+		this.lat = lat;
+		this.lon = lon;
+		this.price = price;
+		this.bookingDates = bookingDates;
+	}
+
 	@DynamoDbPartitionKey
 	public String getDelegationId() {
 		return delegationId;
